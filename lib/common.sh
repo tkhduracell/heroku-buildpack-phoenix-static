@@ -4,14 +4,18 @@ info() {
 }
 
 indent() {
+  set +x 
   while read LINE; do
     echo "       $LINE" || true
   done
+  set -x
 }
 
 head() {
+  set +x
   echo ""
   echo "-----> $*"
+  set -x
 }
 
 file_contents() {
