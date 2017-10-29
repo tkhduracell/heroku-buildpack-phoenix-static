@@ -120,16 +120,11 @@ install_and_cache_deps() {
 }
 
 install_npm_deps() {
-  pwd
-  ls -la
   
-  echo "assets_dir: $assets_dir"  
-  echo "phoenix_dir: $phoenix_dir"
-  
-  ls -la $phoenix_dir
+  info "Installing mix deps..."  
   (cd $phoenix_dir && mix deps.get)
-  ls -la $phoenix_dir
   
+  info "Installing NPM deps..."  
   npm prune
   npm install --quiet --unsafe-perm --userconfig $build_dir/npmrc
   npm rebuild
