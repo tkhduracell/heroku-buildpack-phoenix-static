@@ -127,6 +127,8 @@ install_npm_deps() {
   echo "phoenix_dir: $phoenix_dir"
   
   ls -la $phoenix_dir
+  (cd $phoenix_dir && mix deps.get)
+  ls -la $phoenix_dir
   
   npm prune
   npm install --quiet --unsafe-perm --userconfig $build_dir/npmrc
