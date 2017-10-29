@@ -120,10 +120,11 @@ install_and_cache_deps() {
 }
 
 install_npm_deps() {
-  npm prune | indent
-  npm install --quiet --unsafe-perm --userconfig $build_dir/npmrc 2>&1 | indent
-  npm rebuild 2>&1 | indent
-  npm --unsafe-perm prune 2>&1 | indent
+  pwd
+  npm prune
+  npm install --quiet --unsafe-perm --userconfig $build_dir/npmrc
+  npm rebuild
+  npm --unsafe-perm prune
 }
 
 install_yarn_deps() {
