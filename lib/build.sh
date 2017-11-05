@@ -124,7 +124,7 @@ install_and_cache_deps() {
 install_npm_deps() {
   
   info "Installing mix deps..."  
-  (cd $phoenix_dir && mix deps.get)
+  mix deps.get
   
   info "Installing NPM deps..."  
   npm prune
